@@ -1,0 +1,90 @@
+#FIXED BIAS
+
+Vcc = int(input("Enter the Vcc: "))
+Vbe = int(input("Enter the Vbe: "))
+Rb = int(input("Enter the Rb: "))
+Beta = int(input("Enter the Beta: "))
+Rc = int(input("Enter the Rc: "))
+
+Ib=(Vcc-Vbe)/Rb
+Ic=Beta*Ib
+Ie=(Beta+1)*Ib
+Vce=Vcc-(Ic*Rc)
+
+print(f"The  value of Ib is:",Ib)
+print(f"The  value of Ic is:",Ic)
+print(f"The  value of Ie is:",Ie)
+print(f"The  value of Vce is:",Vce)
+
+#EMITTER BIAS
+
+Vcc = int(input(" Enter the Vcc: ")) 
+Vbe = int(input("Enter the Vbe: ")) 
+Rb = int(input("Enter the Rb: ")) 
+Beta = int(input ("Enter the Beta: ")) 
+Re = int(input("Enter the Re: ")) 
+Rc = int(input("Enter the Rc: "))
+
+Ib=(Vcc-Vbe) /(Rb+(Beta+1)*Re)
+Ic= Beta*Ib
+Ie=(Beta+1) *Re
+Ri=(Beta+1) *Re
+Vce=(Vcc-Ic)*(Rc+Re) 
+
+print(f"The value of Ib is:", Ib) 
+print(f" The value of Ic is:", Ic) 
+print(f"The value of Ie is:",Ie) 
+print(f"The value of Ri is:", Ri)
+print (f"The value of Vce is:", Vce)
+
+#COLLECTOR FEEDBACK
+
+Vcc = int(input("Enter the Vcc: "))
+Vbe = int(input("Enter the Vbe: "))
+Rf = int(input("Enter the Rf: "))
+Beta = int(input("Enter the Beta: "))
+Rc = int(input("Enter the Rc: "))
+Re = int(input("Enter the Re: "))
+
+Ib=(Vcc-Vbe)/(Rf+Beta*(Rc+Re))
+Ic=Beta*Ib
+Ie=(Beta+1)*Ib
+Vce=Vcc-(Ic*(Rc+Re))
+
+print(f"The  value of Ib is:",Ib)
+print(f"The  value of Ic is:",Ic)
+print(f"The  value of Ie is:",Ie)
+print(f"The  value of Vce is:",Vce)
+
+#DEPLETION TYPE MOSFET FIXED BIAS
+
+Vgg = int(input("Enter the Vgg:"))
+Vdd = int(input("Enter the Vdd:"))
+IdRs = int(input("Enter the IdRs:"))
+
+Vgsq = +Vgg
+Vds = Vdd-IdRs
+
+print(f"The value of Vgsq is:",Vgsq)
+print(f"The value of Vds is:",Vds)
+
+#DEPLETION TYPE MOSFET VOLTAGE DIVIDER BIAS
+
+R2 = int(input("Enter the R2: ")) 
+Vdd = int(input("Enter the Vdd: ")) 
+R1 = int(input("Enter the R1: ")) 
+R2 = int(input("Enter the R2: ")) 
+Vg = int(input("Enter the Vg: "))
+IsRs = int(input("Enter the IsRs: "))
+Id = int(input("Enter the Id: "))
+Rd = int(input("Enter the Rd: "))
+Rs = int(input("Enter the Rs: "))
+
+Vg=(R2*Vdd)/(R1+R2) 
+Vgs=Vg-IsRs
+Vds=Vdd-Id*(Rd+Rs) 
+
+
+print(f"The value of Vg is:",Vg) 
+print(f"The value of Vgs is:",Vgs) 
+print(f"The value of Vds is:",Vds)
